@@ -1,0 +1,18 @@
+.c-themeRec {
+	margin: auto;
+	display: flex;
+	width: 1240px;
+	height: 596px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0 4px 0 rgb(43 43 43 / 10%);
+	&__adInfo {
+		width: 50%;
+		display: flex;
+		background-color: #275E9D;
+	}
+	&__prodInfo {
+		width: 50%;
+	}
+}

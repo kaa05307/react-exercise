@@ -7,7 +7,9 @@ const AdBanner = (props) => {
   } = props;
 
 	return (
-    <img src={imageSrc} alt={imageAlt} />
+    <div className="c-adBanner">
+      <img src={imageSrc} alt={imageAlt} />
+    </div>
 	);
 }
  

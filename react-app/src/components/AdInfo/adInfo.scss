@@ -1,0 +1,47 @@
+.c-adInfo {
+	position: relative;
+	width: calc(100% - 360px);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	// background-color: #275E9D;
+	&__tag {
+		position: absolute;
+		top: 16px;
+		left: 0;
+		display: inline-block;
+		padding: 12px 8px;
+		color: #FFF;
+		font-style: italic;
+		background-color: #0090EB;
+	}
+	&__title {
+		position: absolute;
+		top: 64px;
+		left: 24px;
+		color: #FFF;
+		font-size: 36px;
+		font-weight: 700;
+	}
+	&__keyword {
+		margin: 0 24px 48px;
+		li {
+			margin-right: 8px;
+			display: inline-block;
+			& + li {
+				margin-top: 16px;
+			}
+		}
+		a {
+			display: inline-block;
+			padding: 2px 12px;
+			color: #FFF;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 21px;
+			border-radius: 100px;
+			background: rgba(255, 255, 255, 0.2);
+		}
+	}
+}
