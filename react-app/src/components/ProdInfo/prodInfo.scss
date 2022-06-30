@@ -3,10 +3,29 @@
 	width: 152px;
 	
 	&__link {}
-	&__flex {}
-	&__head {}
-	&__body {}
+	&__flex {
+		display: flex;
+		flex-direction: column;
+	}
+	&__head {
+		margin-bottom: 8px;
+	}
+	&__body {
+		
+	}
 	&__img {}
-	&__title {}
-	&__price {}
+	&__title {
+		margin-bottom: 4px;
+		color: #2B2B2B;
+		font-weight: 500;
+		line-height: 1.5;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	&__price {
+		color: #EA1717;
+		font-weight: 700;
+	}
 }

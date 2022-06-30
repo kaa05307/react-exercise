@@ -12,7 +12,11 @@ const ThemeRec = () => {
 				<AdBanner />
 			</div>
 			<div className="c-themeRec__prodInfo">
-				<ProdInfo />
+				<ul className='c-themeRec__list'>
+					<li className='c-themeRec__item'>
+						{<ProdInfo />}
+					</li>
+				</ul>
 				<Pagination item={3} />
 			</div>
 		</div>
