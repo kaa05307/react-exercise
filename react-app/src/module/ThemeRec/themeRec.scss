@@ -22,8 +22,8 @@
 		border-bottom: 1px solid #F2F2F2;
 	}
 	&__item {
-		width: calc((100% - (60px * 2)) / 3);
-		margin-right: 60px;
+		width: calc((100% - (50px * 2)) / 3);
+		margin-right: 50px;
 		margin-bottom: 16px;
 		&:nth-child(3), &:nth-child(6) {
 			margin-right: 0;
