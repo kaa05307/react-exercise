@@ -73,7 +73,7 @@ const ThemeRec = () => {
 				<ul className='c-themeRec__list'>
 						{renderProdItem()}
 				</ul>
-				<Pagination item={3} />
+				<Pagination />
 			</div>
 		</div>
 	);
