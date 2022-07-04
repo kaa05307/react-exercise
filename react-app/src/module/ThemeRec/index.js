@@ -7,6 +7,7 @@ import './themeRec.scss';
 const ThemeRec = () => {
 	const prodData = [
 		{
+			id: 1,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -14,6 +15,7 @@ const ThemeRec = () => {
 			price: '2156666',
 		},
 		{
+			id: 2,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -21,6 +23,7 @@ const ThemeRec = () => {
 			price: '2156666',
 		},
 		{
+			id: 3,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -28,6 +31,7 @@ const ThemeRec = () => {
 			price: '2156666',
 		},
 		{
+			id: 4,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -35,6 +39,7 @@ const ThemeRec = () => {
 			price: '2156666',
 		},
 		{
+			id: 5,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -42,6 +47,7 @@ const ThemeRec = () => {
 			price: '2156666',
 		},
 		{
+			id: 6,
 			link: 'https://24h.pchome.com.tw/',
 			imageSrc: 'https://fakeimg.pl/300/',
 			imageAlt: 'ad',
@@ -51,7 +57,7 @@ const ThemeRec = () => {
 	]
 	const renderProdItem = () => {
     return prodData.map((objData) => (
-      <li className='c-themeRec__item'>
+      <li key={objData.id} className='c-themeRec__item'>
         <ProdInfo {...objData} />
       </li>
     ));
