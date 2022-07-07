@@ -1,6 +1,6 @@
 import './adInfo.scss';
 
-const AdInfo = () => {
+const AdInfo = (props) => {
   const keywordData = [
     {
 			id: 1,
@@ -23,6 +23,9 @@ const AdInfo = () => {
       name: '#2020喇叭耳機推薦指南'
     }
   ]
+
+  const {Text2, Background} = props.data;
+
 	const renderKeyword = () => {
     return keywordData.map((objData) => (
       <li key={objData.id}><a href="_"><span>{objData.name}</span></a></li>
@@ -34,7 +37,7 @@ const AdInfo = () => {
       <div className="c-adInfo__tag">
         <span className='c-adInfo__text'>主題推薦</span>
       </div>
-      <h3 className='c-adInfo__title'>3C 電競年終戰</h3>
+      <h3 className='c-adInfo__title'>{Text2}</h3>
       <ul className='c-adInfo__keyword'>
         {renderKeyword()}
       </ul>
