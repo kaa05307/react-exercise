@@ -1,14 +1,11 @@
 import './adBanner.scss';
 
 const AdBanner = (props) => {
-  const {
-    imageSrc = 'https://fakeimg.pl/720x1192/',
-    imageAlt = 'ad',
-  } = props;
+  const {data} = props;
 
 	return (
     <div className="c-adBanner">
-      <img src={imageSrc} alt={imageAlt} />
+      <img src={data[0].Img.Src} alt={data[0].Img.Text} />
     </div>
 	);
 }

@@ -5,64 +5,6 @@ import Pagination from '../../components/Pagination';
 import './themeRec.scss';
 
 const ThemeRec = () => {
-	const prodData = [
-		{
-			id: 1,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-		{
-			id: 2,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-		{
-			id: 3,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-		{
-			id: 4,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-		{
-			id: 5,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-		{
-			id: 6,
-			link: 'https://24h.pchome.com.tw/',
-			imageSrc: 'https://fakeimg.pl/300/',
-			imageAlt: 'ad',
-			title: 'Tokuyo 新nano玩美椅 按摩椅TC-263 (全機保固1年)',
-			price: '2156666',
-		},
-	]
-	const renderProdItem = () => {
-    return prodData.map((objData) => (
-      <li key={objData.id} className='c-themeRec__item'>
-        <ProdInfo {...objData} />
-      </li>
-    ));
-  };
-
 	const data = [
 		{
 			Id: 1,
@@ -369,17 +311,37 @@ const ThemeRec = () => {
 		},
 	];
 
+	const prodData = data.slice(6, 24);
+	prodData.map((item) => {
+    if(item.ExtraData.ElementType === 'Search'){
+      item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
+    } else if(item.ExtraData.ElementType === 'Store'){
+      item.Link.Url = `https://24h.pchome.com.tw/store/${item.Link.Url}`;
+    } else if(item.ExtraData.ElementType === 'Prod'){
+      item.Link.Url = `https://24h.pchome.com.tw/prod/${item.Link.Url}`;
+    }
+    return item;
+  })
+
+	const renderProdItem = () => {
+    return prodData.map((objData) => (
+      <li key={objData.Id} className='c-themeRec__item'>
+        <ProdInfo {...objData} />
+      </li>
+    ));
+  };
+
 	return (
 		<div className="c-themeRec">
 			<div className="c-themeRec__adInfo" style={{backgroundColor: data[0].Link.Background}}>
 				<AdInfo data={data} />
-				<AdBanner />
+				<AdBanner data={data} />
 			</div>
 			<div className="c-themeRec__prodInfo">
 				<ul className='c-themeRec__list'>
 						{renderProdItem()}
 				</ul>
-				<Pagination />
+				<Pagination data={data} />
 			</div>
 		</div>
 	);
