@@ -10,7 +10,7 @@ const Pagination = ({ totalPage }) => {
     setActive(active - 1)
   }
   const nextClick = () => {
-    if(active === (totalPage.length)/6) {
+    if(active === totalPage) {
       return
     }
     setActive(active + 1)
