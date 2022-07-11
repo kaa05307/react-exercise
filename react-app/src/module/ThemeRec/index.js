@@ -313,13 +313,19 @@ const ThemeRec = () => {
 
 	const prodData = data.slice(6, 24);
 	prodData.map((item) => {
-    if(item.ExtraData.ElementType === 'Search'){
-      item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
-    } else if(item.ExtraData.ElementType === 'Store'){
-      item.Link.Url = `https://24h.pchome.com.tw/store/${item.Link.Url}`;
-    } else if(item.ExtraData.ElementType === 'Prod'){
-      item.Link.Url = `https://24h.pchome.com.tw/prod/${item.Link.Url}`;
-    }
+		switch (item.ExtraData.ElementType) {
+			case 'Search':
+      	item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
+				break;
+			case 'Store':
+      	item.Link.Url = `https://24h.pchome.com.tw/store/${item.Link.Url}`;
+				break;
+			case 'Prod':
+      	item.Link.Url = `https://24h.pchome.com.tw/prod/${item.Link.Url}`;
+				break;
+			default:
+				break;
+		}
     return item;
   })
 
