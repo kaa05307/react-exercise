@@ -368,13 +368,11 @@ const ThemeRec = () => {
 			},
 		},
 	];
-	const data1 = data[0].Link;
-	console.log(data1);
 
 	return (
 		<div className="c-themeRec">
-			<div className="c-themeRec__adInfo">
-				<AdInfo data={data1} />
+			<div className="c-themeRec__adInfo" style={{backgroundColor: data[0].Link.Background}}>
+				<AdInfo data={data} />
 				<AdBanner />
 			</div>
 			<div className="c-themeRec__prodInfo">

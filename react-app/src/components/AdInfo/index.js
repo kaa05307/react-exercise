@@ -1,34 +1,19 @@
 import './adInfo.scss';
 
 const AdInfo = (props) => {
-  const keywordData = [
-    {
-			id: 1,
-      name: '#羅技滑鼠下殺9折'
-    },
-    {
-      id: 2,
-      name: '#電競筆電'
-    },
-    {
-      id: 3,
-      name: '#電競椅',
-    },
-    {
-      id: 4,
-      name: '#Acer主機+電競耳麥優惠組'
-    },
-    {
-      id: 5,
-      name: '#2020喇叭耳機推薦指南'
+  const {data} = props;
+
+  const keywordData = data.slice(1, 6);
+  keywordData.map((item) => {
+    if(item.ExtraData.ElementType === 'Search'){
+      item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Text}`;
     }
-  ]
+    return item;
+  })
 
-  const {Text2, Background} = props.data;
-
-	const renderKeyword = () => {
+  const renderKeyword = () => {
     return keywordData.map((objData) => (
-      <li key={objData.id}><a href="_"><span>{objData.name}</span></a></li>
+      <li key={objData.Id}><a href={objData.Link.Url}><span>{objData.Link.Text}</span></a></li>
     ));
   };
 
@@ -37,7 +22,7 @@ const AdInfo = (props) => {
       <div className="c-adInfo__tag">
         <span className='c-adInfo__text'>主題推薦</span>
       </div>
-      <h3 className='c-adInfo__title'>{Text2}</h3>
+      <h3 className='c-adInfo__title'>{data[0].Link.Text2}</h3>
       <ul className='c-adInfo__keyword'>
         {renderKeyword()}
       </ul>
