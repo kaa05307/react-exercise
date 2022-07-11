@@ -1,6 +1,6 @@
-import AdInfo from '../../components/AdInfo';
-import AdBanner from '../../components/AdBanner';
-import ProdInfo from '../../components/ProdInfo';
+import AdInfo from './components/AdInfo';
+import AdBanner from './components/AdBanner';
+import ProdInfo from '../../components/Object/ProdInfo';
 import Pagination from '../../components/Pagination';
 import './themeRec.scss';
 
@@ -340,14 +340,14 @@ const ThemeRec = () => {
 	return (
 		<div className="c-themeRec">
 			<div className="c-themeRec__adInfo" style={{backgroundColor: data[0].Link.Background}}>
-				<AdInfo data={data} />
-				<AdBanner data={data} />
+				<AdInfo infoData={data[0]} keywordData={data.slice(1, 6)} />
+				<AdBanner bannerData={data[0]} />
 			</div>
 			<div className="c-themeRec__prodInfo">
 				<ul className='c-themeRec__list'>
-						{renderProdItem()}
+					{renderProdItem()}
 				</ul>
-				<Pagination data={data} />
+				<Pagination totalPage={(data.slice(6, 24).length)/6} />
 			</div>
 		</div>
 	);
