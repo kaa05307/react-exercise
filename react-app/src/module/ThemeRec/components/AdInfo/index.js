@@ -8,12 +8,6 @@ const AdInfo = ({ infoData, keywordData }) => {
     return item;
   })
 
-  const renderKeyword = () => {
-    return keywordData.map((objData) => (
-      <li key={objData.Id}><a href={objData.Link.Url}><span>{objData.Link.Text}</span></a></li>
-    ));
-  };
-
 	return (
     <div className="c-adInfo">
       <div className="c-adInfo__tag">
@@ -21,7 +15,11 @@ const AdInfo = ({ infoData, keywordData }) => {
       </div>
       <h3 className='c-adInfo__title'>{infoData.Link.Text2}</h3>
       <ul className='c-adInfo__keyword'>
-        {renderKeyword()}
+        {
+          keywordData.map((objData) => (
+            <li key={objData.Id}><a href={objData.Link.Url}><span>{objData.Link.Text}</span></a></li>
+          ))
+        }
       </ul>
     </div>
 	);
