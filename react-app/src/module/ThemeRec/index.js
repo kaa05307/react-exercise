@@ -8,7 +8,7 @@ import './themeRec.scss';
 
 const ThemeRec = () => {
 	const [prodData, setProdData] = useState(data.slice(6, 24));
-
+	
 	useEffect(() => {
 		prodData.map((item) => {
 			switch (item.ExtraData.ElementType) {
@@ -26,6 +26,7 @@ const ThemeRec = () => {
 			}
 			return item;
 		})
+		setProdData(prodData)
 	}, [prodData]);
 	
 	return (
