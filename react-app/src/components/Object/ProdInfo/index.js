@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './prodInfo.scss';
 
 const ProdInfo = ({ Link, Img }) => {
@@ -19,5 +20,16 @@ const ProdInfo = ({ Link, Img }) => {
     </div>
 	);
 }
+
+ProdInfo.propTypes = {
+  Link: PropTypes.shape({
+    Text: PropTypes.string,
+    Text1: PropTypes.string,
+    Url: PropTypes.string,
+  }),
+  Img: PropTypes.shape({
+    Src: PropTypes.string,
+  }),
+};
  
 export default ProdInfo;

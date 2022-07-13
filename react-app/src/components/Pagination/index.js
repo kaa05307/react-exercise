@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './pagination.scss';
 
 const Pagination = ({ totalPage }) => {
@@ -26,5 +27,9 @@ const Pagination = ({ totalPage }) => {
     </ul>
 	);
 }
+
+Pagination.propTypes = {
+  totalPage: PropTypes.number,
+};
 
 export default Pagination;

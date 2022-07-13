@@ -1,4 +1,5 @@
 import './adBanner.scss';
+import PropTypes from 'prop-types';
 
 const AdBanner = ({ bannerData }) => {
   const { Img: {Src, Text} } = bannerData;
@@ -8,5 +9,14 @@ const AdBanner = ({ bannerData }) => {
     </div>
 	);
 }
- 
+
+AdBanner.propTypes = {
+  bannerData: PropTypes.shape({
+    Img: PropTypes.shape({
+      Src: PropTypes.string,
+      Text: PropTypes.string,
+    }),
+  }),
+};
+
 export default AdBanner;

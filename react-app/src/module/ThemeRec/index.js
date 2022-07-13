@@ -7,10 +7,10 @@ import { data } from '../../data';
 import './themeRec.scss';
 
 const ThemeRec = () => {
-	const [prodData, setProdData] = useState(data.slice(6, 24));
-	
+	const [prodData, setProdData] = useState([]);
+
 	useEffect(() => {
-		prodData.map((item) => {
+		const newData = data.slice(6, 24).map((item) => {
 			switch (item.ExtraData.ElementType) {
 				case 'Search':
 					item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
@@ -26,8 +26,8 @@ const ThemeRec = () => {
 			}
 			return item;
 		})
-		setProdData(prodData)
-	}, [prodData]);
+		setProdData(newData)
+	}, []);
 	
 	return (
 		<div className="c-themeRec">

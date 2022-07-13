@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './adInfo.scss';
 
 const AdInfo = ({ infoData, keywordData }) => {
@@ -24,5 +25,22 @@ const AdInfo = ({ infoData, keywordData }) => {
     </div>
 	);
 }
+
+AdInfo.propTypes = {
+  infoData: PropTypes.shape({
+    Link: PropTypes.shape({
+      Text2: PropTypes.string,
+    }),
+  }),
+  keywordData: PropTypes.arrayOf(
+    PropTypes.shape({
+      Id: PropTypes.number,
+      Link: PropTypes.shape({
+        Text: PropTypes.string,
+        Url: PropTypes.string,
+      }),
+    })
+  ),
+};
  
 export default AdInfo;
