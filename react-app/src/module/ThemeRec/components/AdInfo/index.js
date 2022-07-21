@@ -42,5 +42,15 @@ AdInfo.propTypes = {
     })
   ),
 };
+AdInfo.defaultProps = {
+  infoData: {},
+  Link: {},
+  Text2: undefined,
+  keywordData: [],
+  PropTypes: {},
+  Id: null,
+  Text: undefined,
+  Url: undefined,
+};
  
 export default AdInfo;

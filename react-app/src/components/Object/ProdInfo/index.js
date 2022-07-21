@@ -31,5 +31,13 @@ ProdInfo.propTypes = {
     Src: PropTypes.string,
   }),
 };
+ProdInfo.defaultProps = {
+  Link: {},
+  Text: undefined,
+  Text1: undefined,
+  Url: undefined,
+  Img: {},
+  Src: undefined,
+};
  
 export default ProdInfo;

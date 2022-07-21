@@ -18,5 +18,11 @@ AdBanner.propTypes = {
     }),
   }),
 };
+AdBanner.defaultProps = {
+  bannerData: {},
+  Img: {},
+  Src: undefined,
+  Text: undefined,
+};
 
 export default AdBanner;
