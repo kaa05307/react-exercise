@@ -10,7 +10,7 @@ import './themeRec.scss';
 const ThemeRec = () => {
 	const data = data1.window1.Blocks[0].Nodes;
 	const [prodData, setProdData] = useState([]);
-	
+
 	// useEffect(() => {
 	// 	const newData = data.slice(6, 24).map((item) => {
 	// 		switch (item.ExtraData.ElementType) {
