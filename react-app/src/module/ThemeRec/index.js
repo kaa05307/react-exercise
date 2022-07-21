@@ -3,12 +3,33 @@ import AdInfo from './components/AdInfo';
 import AdBanner from './components/AdBanner';
 import ProdInfo from '../../components/Object/ProdInfo';
 import Pagination from '../../components/Pagination';
-import { data } from '../../data';
+// import { data } from '../../data';
+import { data1 } from '../../data1';
 import './themeRec.scss';
 
 const ThemeRec = () => {
+	const data = data1.window1.Blocks[0].Nodes;
 	const [prodData, setProdData] = useState([]);
-
+	
+	// useEffect(() => {
+	// 	const newData = data.slice(6, 24).map((item) => {
+	// 		switch (item.ExtraData.ElementType) {
+	// 			case 'Search':
+	// 				item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
+	// 				break;
+	// 			case 'Store':
+	// 				item.Link.Url = `https://24h.pchome.com.tw/store/${item.Link.Url}`;
+	// 				break;
+	// 			case 'Prod':
+	// 				item.Link.Url = `https://24h.pchome.com.tw/prod/${item.Link.Url}`;
+	// 				break;
+	// 			default:
+	// 				break;
+	// 		}
+	// 		return item;
+	// 	})
+	// 	setProdData(newData)
+	// }, []);
 	useEffect(() => {
 		const newData = data.slice(6, 24).map((item) => {
 			switch (item.ExtraData.ElementType) {
@@ -27,7 +48,7 @@ const ThemeRec = () => {
 			return item;
 		})
 		setProdData(newData)
-	}, []);
+	}, [data]);
 	
 	return (
 		<div className="c-themeRec">
