@@ -3,11 +3,20 @@ import './prodInfo.scss';
 import ProdInfoItem from '../../../../components/Object/ProdInfoItem';
 import PropTypes from 'prop-types';
 
-const ProdInfo = ({ infoData }) => {
+const ProdInfo = ({ infoData, page }) => {
   const [prodData, setProdData] = useState([]);
-
+  
 	useEffect(() => {
-		const newData = infoData.map((item) => {
+    let pageData = [];
+    if (page === 1) {
+      pageData = infoData.slice(0, 6)
+    } else if (page === 2) {
+      pageData = infoData.slice(6, 12)
+    } else if (page === 3) {
+      pageData = infoData.slice(12, 18)
+    }
+
+		const newData = pageData.map((item) => {
 			switch (item.ExtraData.ElementType) {
 				case 'Search':
 					item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
@@ -24,7 +33,8 @@ const ProdInfo = ({ infoData }) => {
 			return item;
 		})
 		setProdData(newData)
-	}, [infoData]);
+    
+	}, [infoData, page]);
 
 	return (
     <ul className='c-prodInfo'>

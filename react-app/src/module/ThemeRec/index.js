@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdInfo from './components/AdInfo';
 import AdBanner from './components/AdBanner';
 import ProdInfo from './components/ProdInfo';
@@ -8,6 +8,7 @@ import './themeRec.scss';
 
 const ThemeRec = () => {
 	const data = data1.window1.Blocks[0].Nodes;
+	const [page, setPage] = useState(1);
 
 	return (
 		<div className="c-themeRec">
@@ -16,8 +17,8 @@ const ThemeRec = () => {
 				<AdBanner bannerData={data[0]} />
 			</div>
 			<div className="c-themeRec__prodInfo">
-				<ProdInfo infoData={data.slice(6, 24)} />
-				<Pagination totalPage={(data.slice(6, 24).length)/6} />
+				<ProdInfo infoData={data.slice(6, 24)} page={page} />
+				<Pagination setPage={setPage} page={page} totalPage={(data.slice(6, 24).length)/6} />
 			</div>
 		</div>
 	);

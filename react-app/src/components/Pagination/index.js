@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './pagination.scss';
 
-const Pagination = ({ totalPage }) => {
-  const [page,setPage] = useState(1);
+const Pagination = ({ totalPage, page, setPage }) => {
   const atPageDecrease = () => {
-    if(page === 1) {
+    if (page === 1) {
       return;
     }
     setPage(page - 1);
   }
   const atPageIncrease = () => {
-    if(page === totalPage) {
+    if (page === totalPage) {
       return;
     }
     setPage(page + 1);
