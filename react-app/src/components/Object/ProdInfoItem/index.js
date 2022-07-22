@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import './prodInfo.scss';
+import './prodInfoItem.scss';
 
-const ProdInfo = ({ Link, Img }) => {
+const ProdInfoItem = ({ Link, Img }) => {
 	return (
 		<div className='o-prodInfo'>
       <a href={Link.Url} className='o-prodInfo__link'>
@@ -21,7 +21,7 @@ const ProdInfo = ({ Link, Img }) => {
 	);
 }
 
-ProdInfo.propTypes = {
+ProdInfoItem.propTypes = {
   Link: PropTypes.shape({
     Text: PropTypes.string,
     Text1: PropTypes.string,
@@ -31,7 +31,7 @@ ProdInfo.propTypes = {
     Src: PropTypes.string,
   }),
 };
-ProdInfo.defaultProps = {
+ProdInfoItem.defaultProps = {
   Link: {},
   Text: undefined,
   Text1: undefined,
@@ -40,4 +40,4 @@ ProdInfo.defaultProps = {
   Src: undefined,
 };
  
-export default ProdInfo;
+export default ProdInfoItem;
