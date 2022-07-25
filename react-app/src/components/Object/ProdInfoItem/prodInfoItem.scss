@@ -1,7 +1,8 @@
 .o-prodInfo {
 	width: 100%;
-	
-	&__link {}
+	&__link {
+		display: block;
+	}
 	&__flex {
 		display: flex;
 		flex-direction: column;
@@ -9,8 +10,10 @@
 	&__head {
 		margin-bottom: 8px;
 	}
-	&__body {}
-	&__img {}
+	&__img {
+		width: 152px;
+		height: 152px;
+	}
 	&__title {
 		margin-bottom: 4px;
 		color: #2B2B2B;

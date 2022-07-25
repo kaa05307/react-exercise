@@ -9,11 +9,11 @@ const ProdInfo = ({ infoData, page }) => {
 	useEffect(() => {
     let pageData = [];
     if (page === 1) {
-      pageData = infoData.slice(0, 6)
+      pageData = infoData.slice(0, 6);
     } else if (page === 2) {
-      pageData = infoData.slice(6, 12)
+      pageData = infoData.slice(6, 12);
     } else if (page === 3) {
-      pageData = infoData.slice(12, 18)
+      pageData = infoData.slice(12, 18);
     }
 
 		const newData = pageData.map((item) => {

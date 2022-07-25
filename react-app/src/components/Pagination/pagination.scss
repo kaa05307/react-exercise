@@ -7,13 +7,13 @@
 	&__item {
 		padding: 0 4px;
 		color: #EA1717;
-		&.is-active{
+		&.is-active {
 			font-weight: 700;
 		}
-		&.is-active, &.is-total{
+		&.is-active, &.is-total {
 			font-style: italic;
 		}
-		&.is-prev, &.is-next{
+		&.is-prev, &.is-next {
 			padding: 0;
 			display: flex;
 			justify-content: center;
@@ -25,6 +25,9 @@
 			outline: 1px solid #E5E5E5;
 			background-color: #fff;
 			cursor: pointer;
+			&:hover {
+				outline-color: #ea1717;
+			}
 		}
 	}
 }
