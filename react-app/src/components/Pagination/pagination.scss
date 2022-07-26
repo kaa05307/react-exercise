@@ -25,10 +25,16 @@
 			outline: 1px solid #E5E5E5;
 			background-color: #fff;
 			cursor: pointer;
-			opacity: 1;
+			transition: .7s;
+			&:hover {
+				outline-color: #EA1717;
+			}
 		}
 		&.is-disabled {
 			cursor: default;
+			&:hover {
+				outline-color: #E5E5E5;
+			}
 			.o-icon--prev {
 				border-color: transparent #c7c7c7 transparent transparent;
 			}

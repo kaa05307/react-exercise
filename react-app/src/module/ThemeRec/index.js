@@ -18,7 +18,7 @@ const ThemeRec = () => {
 			</div>
 			<div className="c-themeRec__prodInfo">
 				<ProdInfo infoData={data.slice(6, 24)} page={page} />
-				<Pagination setPage={setPage} page={page} totalPage={(data.slice(6, 24).length)/6} />
+				<Pagination totalPage={(data.slice(6, 24).length)/6} page={page} setPage={setPage} />
 			</div>
 		</div>
 	);
