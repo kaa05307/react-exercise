@@ -29,9 +29,13 @@ const Pagination = ({ totalPage, page, setPage }) => {
 
 Pagination.propTypes = {
   totalPage: PropTypes.number,
+  page: PropTypes.number,
+  setPage: PropTypes.func,
 };
 Pagination.defaultProps = {
   totalPage: null,
+  page: null,
+  setPage: () => {},
 };
 
 export default Pagination;

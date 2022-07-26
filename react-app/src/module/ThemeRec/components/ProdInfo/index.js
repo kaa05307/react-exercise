@@ -7,7 +7,7 @@ const ProdInfo = ({ infoData, page }) => {
   const [prodData, setProdData] = useState([]);
   
 	useEffect(() => {
-    let pageData = [];
+    let pageData = infoData.slice(0, 6);
     if (page === 1) {
       pageData = infoData.slice(0, 6);
     } else if (page === 2) {
@@ -67,6 +67,7 @@ ProdInfo.propTypes = {
       }),
     })
   ),
+  page: PropTypes.number,
 };
 ProdInfo.defaultProps = {
   infoData: [],
@@ -80,6 +81,7 @@ ProdInfo.defaultProps = {
   ExtraData: {},
   ElementType: undefined,
   Sort: null,
+  page: null,
 };
 
 export default ProdInfo;
