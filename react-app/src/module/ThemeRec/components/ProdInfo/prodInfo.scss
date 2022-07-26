@@ -2,20 +2,13 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 24px 32px;
-	border-bottom: 1px solid #F2F2F2;
 	&__item {
-		// display: none;
 		width: calc((100% - (50px * 2)) / 3);
 		margin-right: 50px;
 		margin-bottom: 16px;
-
 		&:nth-child(3),
 		&:nth-child(6) {
 			margin-right: 0;
 		}
-
-		// &:nth-child(-n+6) {
-		// 	display: block;
-		// }
 	}
 }

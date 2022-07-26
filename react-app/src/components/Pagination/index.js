@@ -18,11 +18,11 @@ const Pagination = ({ totalPage, page, setPage }) => {
 
 	return (
 		<ul className='c-pagination'>
-      <li className='c-pagination__item is-prev' onClick={atPageDecrease}><i className='o-icon o-icon--prev'></i></li>
+      <li className={`c-pagination__item is-prev ${page === 1 ? "is-disabled" : ""}`} onClick={atPageDecrease}><i className='o-icon o-icon--prev'></i></li>
       <li className='c-pagination__item is-active'>{page}</li>
       <li className='c-pagination__item'>/</li>
       <li className='c-pagination__item is-total'>{totalPage}</li>
-      <li className='c-pagination__item is-next' onClick={atPageIncrease}><i className='o-icon o-icon--next'></i></li>
+      <li className={`c-pagination__item is-next ${page === totalPage ? "is-disabled" : ""}`} onClick={atPageIncrease}><i className='o-icon o-icon--next'></i></li>
     </ul>
 	);
 }

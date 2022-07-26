@@ -3,7 +3,7 @@
 	display: flex;
   align-items: center;
   justify-content: center;
-
+	border-top: 1px solid #F2F2F2;
 	&__item {
 		padding: 0 4px;
 		color: #EA1717;
@@ -25,8 +25,15 @@
 			outline: 1px solid #E5E5E5;
 			background-color: #fff;
 			cursor: pointer;
-			&:hover {
-				outline-color: #ea1717;
+			opacity: 1;
+		}
+		&.is-disabled {
+			cursor: default;
+			.o-icon--prev {
+				border-color: transparent #c7c7c7 transparent transparent;
+			}
+			.o-icon--next {
+				border-color: transparent transparent transparent #c7c7c7;
 			}
 		}
 	}
