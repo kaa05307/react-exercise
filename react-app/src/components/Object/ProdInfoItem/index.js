@@ -32,12 +32,14 @@ ProdInfoItem.propTypes = {
   }),
 };
 ProdInfoItem.defaultProps = {
-  Link: {},
-  Text: undefined,
-  Text1: undefined,
-  Url: undefined,
-  Img: {},
-  Src: undefined,
+  Link: {
+    Text: '',
+    Text1: '',
+    Url: '',
+  },
+  Img: {
+    Src: '',
+  },
 };
  
 export default ProdInfoItem;

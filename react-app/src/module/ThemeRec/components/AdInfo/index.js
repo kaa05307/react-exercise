@@ -1,13 +1,16 @@
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './adInfo.scss';
 
 const AdInfo = ({ infoData, keywordData }) => {
-  keywordData.map((item) => {
-    if(item.ExtraData.ElementType === 'Search'){
-      item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Text}`;
-    }
-    return item;
-  })
+  useEffect(() => {
+    keywordData.map((item) => {
+      if(item.ExtraData.ElementType === 'Search'){
+        item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Text}`;
+      }
+      return item;
+    })
+  }, [keywordData]);
 
 	return (
     <div className="c-adInfo">
@@ -43,14 +46,20 @@ AdInfo.propTypes = {
   ),
 };
 AdInfo.defaultProps = {
-  infoData: {},
-  Link: {},
-  Text2: undefined,
-  keywordData: [],
-  PropTypes: {},
-  Id: null,
-  Text: undefined,
-  Url: undefined,
+  infoData: {
+    Link: {
+      Text2: '',
+    },
+  },
+  keywordData: [
+    {
+      Id: null,
+      Link: {
+        Text: '',
+        Url: '',
+      }
+    },
+  ],
 };
  
 export default AdInfo;

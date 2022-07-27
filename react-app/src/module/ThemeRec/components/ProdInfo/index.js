@@ -5,16 +5,10 @@ import PropTypes from 'prop-types';
 
 const ProdInfo = ({ infoData, page }) => {
   const [prodData, setProdData] = useState([]);
+  const PER_PAGE_NUMBER = 6;
   
 	useEffect(() => {
-    let pageData = infoData.slice(0, 6);
-    if (page === 1) {
-      pageData = infoData.slice(0, 6);
-    } else if (page === 2) {
-      pageData = infoData.slice(6, 12);
-    } else if (page === 3) {
-      pageData = infoData.slice(12, 18);
-    }
+    let pageData = infoData.slice((page * PER_PAGE_NUMBER) - PER_PAGE_NUMBER, page * PER_PAGE_NUMBER);
 
 		const newData = pageData.map((item) => {
 			switch (item.ExtraData.ElementType) {
@@ -70,17 +64,23 @@ ProdInfo.propTypes = {
   page: PropTypes.number,
 };
 ProdInfo.defaultProps = {
-  infoData: [],
-  Id: null,
-  Link: {},
-  Text: undefined,
-  Text1: undefined,
-  Url: undefined,
-  Img: {},
-  Src: undefined,
-  ExtraData: {},
-  ElementType: undefined,
-  Sort: null,
+  infoData: [
+    {
+      Id: null,
+      Link: {
+        Text: '',
+        Text1: '',
+        Url: '',
+      },
+      Img: {
+        Src: '',
+      },
+      ExtraData: {
+        ElementType: '',
+        Sort: null,
+      },
+    }
+  ],
   page: null,
 };
 
