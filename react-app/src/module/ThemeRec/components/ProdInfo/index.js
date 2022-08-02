@@ -68,15 +68,15 @@ ProdInfo.defaultProps = {
     {
       Id: null,
       Link: {
-        Text: '',
-        Text1: '',
-        Url: '',
+        Text: undefined,
+        Text1: undefined,
+        Url: undefined,
       },
       Img: {
-        Src: '',
+        Src: undefined,
       },
       ExtraData: {
-        ElementType: '',
+        ElementType: undefined,
         Sort: null,
       },
     }

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import './pagination.scss';
 
 const Pagination = ({ totalPage, page, setPage }) => {
-  const atPageDecrease = () => {
+  const onPageDecreaseClick = () => {
     if (page === 1) {
       return;
     }
     setPage(page - 1);
   }
-  const atPageIncrease = () => {
+  const onPageIncreaseClick = () => {
     if (page === totalPage) {
       return;
     }
@@ -18,11 +18,11 @@ const Pagination = ({ totalPage, page, setPage }) => {
 
 	return (
 		<ul className='c-pagination'>
-      <li className={`c-pagination__item is-prev ${page === 1 ? "is-disabled" : ""}`} onClick={atPageDecrease}><i className='o-icon o-icon--prev'></i></li>
+      <li className={`c-pagination__item is-prev ${page === 1 ? "is-disabled" : ""}`} onClick={onPageDecreaseClick}><i className='o-icon o-icon--prev'></i></li>
       <li className='c-pagination__item is-active'>{page}</li>
       <li className='c-pagination__item'>/</li>
       <li className='c-pagination__item is-total'>{totalPage}</li>
-      <li className={`c-pagination__item is-next ${page === totalPage ? "is-disabled" : ""}`} onClick={atPageIncrease}><i className='o-icon o-icon--next'></i></li>
+      <li className={`c-pagination__item is-next ${page === totalPage ? "is-disabled" : ""}`} onClick={onPageIncreaseClick}><i className='o-icon o-icon--next'></i></li>
     </ul>
 	);
 }

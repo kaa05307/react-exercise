@@ -21,8 +21,8 @@ AdBanner.propTypes = {
 AdBanner.defaultProps = {
   bannerData: {
     Img: {
-      Src: '',
-      Text: '',
+      Src: undefined,
+      Text: undefined,
     },
   },
 };

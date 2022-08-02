@@ -48,15 +48,15 @@ AdInfo.propTypes = {
 AdInfo.defaultProps = {
   infoData: {
     Link: {
-      Text2: '',
+      Text2: undefined,
     },
   },
   keywordData: [
     {
       Id: null,
       Link: {
-        Text: '',
-        Url: '',
+        Text: undefined,
+        Url: undefined,
       }
     },
   ],
