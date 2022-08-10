@@ -9,7 +9,6 @@ const ProdInfo = ({ infoData, page }) => {
   
 	useEffect(() => {
     let pageData = infoData.slice((page * PER_PAGE_NUMBER) - PER_PAGE_NUMBER, page * PER_PAGE_NUMBER);
-
 		const newData = pageData.map((item) => {
 			switch (item.ExtraData.ElementType) {
 				case 'Search':
@@ -27,7 +26,6 @@ const ProdInfo = ({ infoData, page }) => {
 			return item;
 		})
 		setProdData(newData)
-    
 	}, [infoData, page]);
 
 	return (

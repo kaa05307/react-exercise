@@ -7,6 +7,7 @@
 	border-radius: 8px;
 	background-color: #fff;
 	box-shadow: 0 4px 0 rgb(43 43 43 / 10%);
+	position: relative;
 	&__adInfo {
 		width: 50%;
 		display: flex;
@@ -16,5 +17,31 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+	&__toolBar {
+		width: 62px;
+		border: 1px solid #c7c7c7;
+		border-radius: 8px;
+		background-color: #f2f2f2;
+		position: absolute;
+		top: 0;
+		left: -80px;
+	}
+	&__toolBarList {
+		
+	}
+	&__toolBarBtn {
+		min-width: 100%;
+		min-height: 48px;
+		padding: 4px 8px;
+		font-size: 16px;
+		font-weight: 400;
+		border: 0;
+		background-color: #f2f2f2;
+		cursor: pointer;
+		&.is-active, &:hover {
+			color: #fff;
+			background-color: #0090eb;
+		}
 	}
 }

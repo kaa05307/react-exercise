@@ -5,7 +5,7 @@ const AdBanner = ({ bannerData }) => {
   const { Img: {Src, Text} } = bannerData;
 	return (
     <div className="c-adBanner">
-      <img src={Src} alt={Text} />
+      <img src={`https://fs-a.ecimg.tw/${Src}`} alt={Text} />
     </div>
 	);
 }
