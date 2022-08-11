@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { getProdData } from '../../../utils/getProdData';
 import './prodInfoItem.scss';
 
-const ProdInfoItem = ({ Link, Img }) => {
+const ProdInfoItem = ({ ExtraData, Link, Img }) => {
 	return (
 		<div className='o-prodInfo'>
-      <a href={Link.Url} className='o-prodInfo__link'>
+      <a href={getProdData(ExtraData.ElementType, Link.Url)} className='o-prodInfo__link'>
         <div className='o-prodInfo__flex'>
           <div className='o-prodInfo__head'>
             <div className='o-prodInfo__img'>

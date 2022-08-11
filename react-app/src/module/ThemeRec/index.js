@@ -14,7 +14,6 @@ const ThemeRec = () => {
 	const [themeDataId, setThemeDataId] = useState(1);
 
 	const handleToolBarClick = (themeData, themeId) => {
-    console.log(themeId);
 		setThemeData(themeData.Nodes);
 		setThemeDataId(themeId);
 		setPage(1);
@@ -24,7 +23,6 @@ const ThemeRec = () => {
 		_axios.get('/index/stage/v1/data&27655702')
 			.then((res) => {
 				console.log('res: ', res);
-				// setData(res.data.window1.Blocks[0].Nodes);
 				setData(res.data.window.Blocks); // [{},{},{},{}]
 				setThemeData(res.data.window.Blocks[0].Nodes); // default
 			})
@@ -33,8 +31,6 @@ const ThemeRec = () => {
 
 	return (
 		<div className="c-themeRec">
-		{console.log('data: ', data)}
-		{console.log('themeData: ', themeData)}
 			<div className="c-themeRec__adInfo" style={{backgroundColor: themeData[0]?.Link?.Background}}>
 				<AdInfo infoData={themeData[0]} keywordData={themeData.slice(1, 6)} />
 				<AdBanner bannerData={themeData[0]} />

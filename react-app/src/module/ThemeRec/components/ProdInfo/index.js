@@ -9,23 +9,7 @@ const ProdInfo = ({ infoData, page }) => {
   
 	useEffect(() => {
     let pageData = infoData.slice((page * PER_PAGE_NUMBER) - PER_PAGE_NUMBER, page * PER_PAGE_NUMBER);
-		const newData = pageData.map((item) => {
-			switch (item.ExtraData.ElementType) {
-				case 'Search':
-					item.Link.Url = `https://ecshweb.pchome.com.tw/search/v3.3/?q=${item.Link.Url}`;
-					break;
-				case 'Store':
-					item.Link.Url = `https://24h.pchome.com.tw/store/${item.Link.Url}`;
-					break;
-				case 'Prod':
-					item.Link.Url = `https://24h.pchome.com.tw/prod/${item.Link.Url}`;
-					break;
-				default:
-					break;
-			}
-			return item;
-		})
-		setProdData(newData)
+		setProdData(pageData)
 	}, [infoData, page]);
 
 	return (

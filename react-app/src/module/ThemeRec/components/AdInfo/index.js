@@ -21,7 +21,7 @@ const AdInfo = ({ infoData, keywordData }) => {
       <ul className='c-adInfo__keyword'>
         {
           keywordData.map((objData) => (
-            <li key={objData.Id}><a href={objData.Link.Url}><span>{objData.Link.Text}</span></a></li>
+            objData.Link.Text && <li key={objData.Id}><a href={objData.Link.Url}><span>{objData.Link.Text}</span></a></li>
           ))
         }
       </ul>
