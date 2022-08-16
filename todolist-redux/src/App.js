@@ -3,21 +3,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo">
+      <input type="text" placeholder='我是一個可愛的輸入框' />
+      <button>新增</button>
+      <table>
+        <tr>
+          <td>你好啊</td>
+          <td><button>刪除</button></td>
+        </tr>
+        <tr>
+          <td>我很好</td>
+          <td><button>刪除</button></td>
+        </tr>
+      </table>
     </div>
   );
 }
