@@ -39,7 +39,7 @@ ProdInfo.propTypes = {
       }),
       ExtraData: PropTypes.shape({
         ElementType: PropTypes.string,
-        Sort: PropTypes.number,
+        Sort: PropTypes.any,
       }),
     })
   ),
