@@ -1,45 +1,63 @@
 import React, { useState } from 'react';
 
+const initialList = [
+	{
+		Id: 1,
+		Name: '你好啊'
+	},
+	{
+		Id: 2,
+		Name: '我很好'
+	},
+	{
+		Id: 3,
+		Name: '那你呢'
+	},
+]
+
 const TodoList = () => {
-	const [name, setName] = useState('');
-  const atChange = (e) => {
-    setName(e.target.value);
+	const [input, setInput] = useState('');
+	const [list, setList] = useState(initialList);
+
+  const onChange = (e) => {
+    setInput(e.target.value);
   };
-  const atAddClick = () => {
+
+  const onAddClick = () => {
     console.log('add');
+		if(input === ''){
+			return;
+		}
+		setInput('');
+    onAddItem(input);
   }
-  const atRemoveClick = () => {
+
+  const onRemoveClick = () => {
     console.log('remove');
   }
 
-	const todoData = [
-		{
-			Id: 1,
-			Name: '你好啊'
-		},
-		{
-			Id: 2,
-			Name: '我很好'
-		},
-		{
-			Id: 3,
-			Name: '那你呢'
-		},
-	]
+	const onAddItem = (text) => {
+		console.log('text: ', text);
+		const item = {
+			Id: new Date().getTime().toString(),
+			Name: text
+		}
+		setList((prev) => prev.concat(item));
+	}
 
 	return (
-		<div className="todolist">
-      <input type="text" placeholder='我是一個可愛的輸入框' value={name} onChange={atChange} />
-      <button onClick={atAddClick}>新增</button>
+		<div className="c-todolist">
+      <input type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={onChange} />
+      <button onClick={onAddClick}>新增</button>
       <table>
         <tbody>
 					{
-						todoData.map((objTodo) => {
+						list.map((objTodo) => {
 							const { Id, Name } = objTodo;
 							return (
 								<tr key={Id}>
 									<td>{Name}</td>
-									<td><button onClick={atRemoveClick}>刪除</button></td>
+									<td><button onClick={onRemoveClick}>刪除</button></td>
 								</tr>
 							)
 						})
