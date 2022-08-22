@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import TodoItem from './TodoItem';
 
 const initialList = [
 	{
-		Id: 1,
-		Name: '你好啊'
+		id: 1,
+		text: '你好啊'
 	},
 	{
-		Id: 2,
-		Name: '我很好'
+		id: 2,
+		text: '我很好'
 	},
 	{
-		Id: 3,
-		Name: '那你呢'
+		id: 3,
+		text: '那你呢'
 	},
 ]
 
@@ -32,18 +33,21 @@ const TodoList = () => {
     onAddItem(input);
   }
 
-  const onRemoveClick = () => {
-    console.log('remove');
-  }
-
 	const onAddItem = (text) => {
-		console.log('text: ', text);
 		const item = {
-			Id: new Date().getTime().toString(),
-			Name: text
+			id: new Date().getTime().toString(),
+			text
 		}
 		setList((prev) => prev.concat(item));
 	}
+
+  const onRemoveClick = (id) => {
+		setList((prevList) => {
+			return prevList.filter(list => {
+				return list.id !== id;
+			});
+		})
+  }
 
 	return (
 		<div className="c-todolist">
@@ -52,15 +56,7 @@ const TodoList = () => {
       <table>
         <tbody>
 					{
-						list.map((objTodo) => {
-							const { Id, Name } = objTodo;
-							return (
-								<tr key={Id}>
-									<td>{Name}</td>
-									<td><button onClick={onRemoveClick}>刪除</button></td>
-								</tr>
-							)
-						})
+						list.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={onRemoveClick} />))
 					}
         </tbody>
       </table>
