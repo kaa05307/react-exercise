@@ -1,39 +1,17 @@
 import React, { useState } from 'react';
+import TodoForm from './TodoForm';
 import TodoItem from './TodoItem';
 import './todoList.scss';
 
 const initialList = [
-	{
-		id: 1,
-		text: '你好啊'
-	},
-	{
-		id: 2,
-		text: '我很好'
-	},
-	{
-		id: 3,
-		text: '那你呢'
-	},
+	{id: 1, text: '你好啊'},
+	{id: 2, text: '我很好'},
 ]
 
 const TodoList = () => {
-	const [input, setInput] = useState('');
 	const [list, setList] = useState(initialList);
 
-  const onChange = (e) => {
-    setInput(e.target.value);
-  };
-
-  const onAddClick = () => {
-		if(input === ''){
-			return;
-		}
-		setInput('');
-    onAddItem(input);
-  }
-
-	const onAddItem = (text) => {
+	const atAddItem = (text) => {
 		const item = {
 			id: new Date().getTime().toString(),
 			text
@@ -41,7 +19,7 @@ const TodoList = () => {
 		setList((prev) => prev.concat(item));
 	}
 
-  const onRemoveClick = (id) => {
+  const atRemoveItem = (id) => {
 		setList((prevList) => {
 			return prevList.filter(list => {
 				return list.id !== id;
@@ -51,12 +29,11 @@ const TodoList = () => {
 
 	return (
 		<div className="c-todolist">
-      <input className="c-todolist__input" type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={onChange} />
-      <button className="c-todolist__button" onClick={onAddClick}>新增</button>
+			<TodoForm onAddItem={atAddItem} />
       <table className="c-todolist__table">
         <tbody>
 					{
-						list.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={onRemoveClick} />))
+						list.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={atRemoveItem} />))
 					}
         </tbody>
       </table>
