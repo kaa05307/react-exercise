@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TodoItem from './TodoItem';
+import './todoList.scss';
 
 const initialList = [
 	{
@@ -25,7 +26,6 @@ const TodoList = () => {
   };
 
   const onAddClick = () => {
-    console.log('add');
 		if(input === ''){
 			return;
 		}
@@ -51,9 +51,9 @@ const TodoList = () => {
 
 	return (
 		<div className="c-todolist">
-      <input type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={onChange} />
-      <button onClick={onAddClick}>新增</button>
-      <table>
+      <input className="c-todolist__input" type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={onChange} />
+      <button className="c-todolist__button" onClick={onAddClick}>新增</button>
+      <table className="c-todolist__table">
         <tbody>
 					{
 						list.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={onRemoveClick} />))

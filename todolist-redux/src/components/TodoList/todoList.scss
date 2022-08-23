@@ -1,1 +1,23 @@
-.c-todolist {}
+button {
+	width: 60px;
+	cursor: pointer;
+}
+.c-todolist {
+	&__input {
+		width: 155px;
+		height: 18px;
+    display: inline-block;
+    vertical-align: top;
+	}
+	&__button {}
+	&__table {
+		margin-top: 16px;
+		border-spacing: 0;
+		border-collapse: collapse;
+		th, td {
+			padding: 5px;
+			width: 100px;
+			border: 1px solid black;
+		}
+	}
+}
