@@ -28,9 +28,9 @@ const TodoList = () => {
   }
 
 	return (
-		<div className="c-todolist">
+		<div className="c-todoList">
 			<TodoForm onAddItem={atAddItem} />
-      <table className="c-todolist__table">
+      <table className="c-todoList__table">
         <tbody>
 					{
 						list.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={atRemoveItem} />))
