@@ -18,11 +18,10 @@ const TodoList = () => {
 		}
 		setList((prev) => prev.concat(item));
 	}
-
   const atRemoveItem = (id) => {
 		setList((prevList) => {
-			return prevList.filter(list => {
-				return list.id !== id;
+			return prevList.filter(item => {
+				return item.id !== id;
 			});
 		})
   }
