@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import TodoForm from './TodoForm';
+// import TodoForm from './TodoForm';
+import TodoFormContainer from '../../containers/TodoFormContainer';
 import TodoItem from './TodoItem';
+
 import './todoList.scss';
 
 // const initialList = [
@@ -29,22 +31,16 @@ const TodoList = () => {
 	const { todos } = useSelector((state) => state);
 	
 	const dispatch = useDispatch();
-	const atAddItem = (text) => {
-		dispatch({
-			type: 'ADD_TODO',
-  		text,
-		})
-	}
 	const atRemoveItem = (id) => {
 		dispatch({
-			type: 'DELETE_TODO',
+			type: 'DELETE',
   		id,
 		})
 	}
 
 	return (
 		<div className="c-todoList">
-			<TodoForm onAddItem={atAddItem} />
+			<TodoFormContainer />
       <table className="c-todoList__table">
         <tbody>
 					{
