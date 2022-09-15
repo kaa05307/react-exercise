@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import TodoForm from '../components/TodoList/TodoForm';
+import TodoForm from '../components/Todo/TodoForm';
 
 const TodoFormContainer = () => {
 	const dispatch = useDispatch();

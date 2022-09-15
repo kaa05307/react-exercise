@@ -17,9 +17,9 @@ const TodoForm = ({ onAddItem }) => {
   }
 
 	return (
-		<form className='c-todoList__form'>
-			<input className="c-todoList__input" type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={atChange} />
-			<button className="c-todoList__button" onClick={atAddClick}>新增</button>
+		<form className='c-todo__form'>
+			<input className="c-todo__input" type="text" placeholder='我是一個可愛的輸入框' value={input} onChange={atChange} />
+			<button className="c-todo__button" onClick={atAddClick}>新增</button>
 		</form>
 	);
 }

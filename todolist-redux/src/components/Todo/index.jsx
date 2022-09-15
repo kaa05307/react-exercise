@@ -4,14 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import TodoFormContainer from '../../containers/TodoFormContainer';
 import TodoItem from './TodoItem';
 
-import './todoList.scss';
+import './todo.scss';
 
 // const initialList = [
 // 	{id: 1, text: '你好啊'},
 // 	{id: 2, text: '我很好'},
 // ]
 
-const TodoList = () => {
+const Todo = () => {
 	// const [list, setList] = useState(initialList);
 	// const atAddItem = (text) => {
 	// 	const item = {
@@ -39,9 +39,9 @@ const TodoList = () => {
 	}
 
 	return (
-		<div className="c-todoList">
+		<div className="c-todo">
 			<TodoFormContainer />
-      <table className="c-todoList__table">
+      <table className="c-todo__table">
         <tbody>
 					{
 						todos.map((item) => (<TodoItem key={item.id} id={item.id} text={item.text} onRemoveClick={atRemoveItem} />))
@@ -52,4 +52,4 @@ const TodoList = () => {
 	);
 }
  
-export default TodoList;
+export default Todo;
