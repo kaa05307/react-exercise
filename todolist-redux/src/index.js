@@ -22,13 +22,3 @@ root.render(
     <App />
   </Provider>
 );
-
-// import { configureStore } from '@reduxjs/toolkit';
-// import counterReducer from './features/counterSlice';
-
-// 透過 configureStore() 建立 Redux Store
-// const store = configureStore({
-//   reducer: {
-//     counter: counterReducer,
-//   }
-// });

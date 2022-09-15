@@ -5,14 +5,14 @@ const initialList = [
 
 export default function todos(state = initialList, action) {
 	switch (action.type) {
-		case 'ADD': {
+		case 'ADD_TODO': {
 			const newState = state.concat({
 				id: new Date().getTime().toString(),
 				text: action.text,
 			})
 			return newState;
 		}
-		case 'DELETE': {
+		case 'DELETE_TODO': {
 			return state.filter((item) => {
 				return item.id !== action.id;
 			})
