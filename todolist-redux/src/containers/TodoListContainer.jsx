@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import TodoList from '../components/Todo/TodoList';
 
 const TodoListContainer = () => {
-	const { todos } = useSelector((state) => state);
+	const { todoReducer } = useSelector((state) => state);
 	
 	const dispatch = useDispatch();
 	const atRemoveItem = (id) => {
@@ -12,6 +12,6 @@ const TodoListContainer = () => {
 		})
 	}
 
-	return <TodoList todos={todos} atRemoveItem={atRemoveItem} />;
+	return <TodoList todos={todoReducer} atRemoveItem={atRemoveItem} />;
 };
 export default TodoListContainer;

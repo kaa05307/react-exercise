@@ -3,7 +3,7 @@ const initialList = [
 	{id: 2, text: '我很好'},
 ]
 
-export default function todos(state = initialList, action) {
+export default function todoReducer(state = initialList, action) {
 	switch (action.type) {
 		case 'ADD': {
 			const newState = state.concat({
